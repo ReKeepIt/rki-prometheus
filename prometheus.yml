@@ -5,4 +5,11 @@ scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost']
+      - targets: ['127.0.0.1:9090']
+  - job_name: 'django'
+    static_configs:
+      - targets: ['rki-api-prod.rekeepit.com']
+    metrics_path: '/metrics'
+    authorization:
+        type: 'Bearer'
+        credentials: 'Bearer ${PROMETHEUS_BEARER_TOKEN}'

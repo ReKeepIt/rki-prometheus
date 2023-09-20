@@ -6,7 +6,7 @@
   "keywords": ["prometheus", "sample"],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-prometheus"
+      "url": "https://github.com/ReKeepIt/heroku-buildpack-prometheus"
     }
   ]
 }
