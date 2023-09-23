@@ -6,9 +6,19 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['127.0.0.1:9090']
+        labels:
+          environment: 'production'
   - job_name: 'django'
     static_configs:
-      - targets: ['rki-api-prod.rekeepit.com']
+      - targets: ['rki-prod.rekeepit.com']
+        labels:
+          environment: 'production'
+      - targets: ['rki-uat.rekeepit.com']
+        labels:
+          environment: 'uat'
+      - targets: ['rki-demo.rekeepit.com']
+        labels:
+          environment: 'qa'
     metrics_path: '/metrics'
     authorization:
         type: 'Bearer'
