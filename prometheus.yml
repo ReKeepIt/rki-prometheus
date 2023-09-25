@@ -19,6 +19,9 @@ scrape_configs:
       - targets: ['rki-demo.rekeepit.com']
         labels:
           environment: 'qa'
+      - targets: ['rki-dev.rekeepit.com']
+        labels:
+          environment: 'development'
     metrics_path: '/metrics'
     authorization:
         type: 'Bearer'
