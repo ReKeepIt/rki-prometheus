@@ -25,4 +25,4 @@ scrape_configs:
     metrics_path: '/metrics'
     authorization:
         type: 'Bearer'
-        credentials: 'Bearer ${PROMETHEUS_BEARER_TOKEN}'
+        credentials: 'Bearer PROMETHEUS_BEARER_TOKEN'
